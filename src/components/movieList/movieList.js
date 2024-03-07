@@ -8,7 +8,6 @@ import Loader from "../loader/loader";
 const MovieList = ({ showPage, currentPage }) => {
   const movies = useSelector((state) => state.movies);
   const [loading, setLoading] = useState(false);
-  console.log(movies);
 
   useEffect(() => {
     if (movies) {
