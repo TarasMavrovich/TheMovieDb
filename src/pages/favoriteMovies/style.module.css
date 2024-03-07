@@ -1,0 +1,47 @@
+.container {
+  width: 100%;
+  background: linear-gradient(to bottom, #2c2b2b, #aa4e4e);
+}
+.list_favorite_movie {
+  margin: 0 auto 0 auto;
+  width: 80%;
+  min-height: 400px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+}
+
+.button_favorite_movies {
+  width: 300px;
+  height: 250px;
+  font-size: 38px;
+  border: 1px solid black;
+  border-radius: 8px;
+  background-color: rgb(36, 31, 41);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  color: white;
+  transition: box-shadow linear 0.3s, color linear 0.2s,
+    background-color linear 0.2s;
+}
+
+.button_favorite_movies:hover {
+  color: rgb(36, 31, 41);
+  background-color: white;
+  cursor: pointer;
+  border-color: rgb(202, 228, 88);
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(255, 255, 255, 0.12) 0px -12px 30px,
+    rgba(255, 255, 255, 0.12) 0px 4px 6px,
+    rgba(255, 255, 255, 0.09) rgba(255, 255, 255, 0.17) 0px 12px 13px,
+    rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.content {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+}

@@ -1,0 +1,46 @@
+.loader {
+  display: inline-block;
+  position: relative;
+  margin-top: 50px;
+  width: 80px;
+  height: 80px;
+}
+
+.dot1,
+.dot2,
+.dot3 {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background-color: #333;
+  border-radius: 50%;
+  animation: scale 1.5s infinite ease-in-out;
+}
+
+.dot1 {
+  animation-delay: 0s;
+  left: 8px;
+  top: 8px;
+}
+
+.dot2 {
+  animation-delay: 0.5s;
+  left: 8px;
+  top: 32px;
+}
+
+.dot3 {
+  animation-delay: 1s;
+  left: 32px;
+  top: 8px;
+}
+
+@keyframes scale {
+  0%,
+  100% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1);
+  }
+}

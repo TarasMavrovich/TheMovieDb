@@ -1,0 +1,86 @@
+.list {
+  display: flex;
+  height: 360px;
+  flex-direction: column;
+  font-family: sans-serif;
+  justify-content: space-between;
+  z-index: 100;
+  outline: 2px solid transparent;
+  transition: outline-color 0.3s ease;
+  border-radius: 9px;
+  color: white;
+}
+
+.list:hover {
+  outline-color: rgb(202, 228, 88);
+}
+
+.img_content {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.img_content:hover,
+.heart:hover {
+  cursor: pointer;
+}
+
+.heart {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  opacity: 0.5;
+  transition: opacity linear 0.1s, transform linear 0.1s;
+}
+
+.active,
+.heart:hover {
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+.img {
+  border-radius: 8px;
+  width: 200px;
+  min-width: 200px;
+  height: calc(200px * 1.5);
+  min-height: calc(200px * 1.5);
+  overflow: hidden;
+  gap: 20px;
+}
+
+.content {
+  position: relative;
+  max-width: 200px;
+  font-size: 15px;
+}
+
+.vote {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+  height: 35px;
+  border: 3px solid rgb(106, 230, 143);
+  background-color: rgb(5, 102, 18);
+  color: white;
+  border-radius: 50%;
+  position: absolute;
+  top: -45px;
+  left: 10px;
+}
+
+.title {
+  font-weight: 600;
+  margin-top: 22px;
+}
+
+.title:hover {
+  cursor: pointer;
+  color: rgba(202, 228, 88, 0.829);
+}
+
+.date {
+  color: rgba(255, 255, 255, 0.6);
+}
