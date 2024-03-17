@@ -29,6 +29,14 @@
   font-size: 1.5em;
 }
 
+.header_name::after {
+  content: "";
+  width: 50px;
+  height: 20px;
+  border-radius: 20px;
+  background: linear-gradient(to right, rgb(184, 226, 250), #e6d094);
+}
+
 .header_list {
   display: flex;
   align-items: center;
@@ -40,17 +48,6 @@
 .flex {
   display: flex;
   margin-right: 20px;
-}
-
-.logo {
-  width: 50px;
-  height: 20px;
-  border-radius: 20px;
-  background: linear-gradient(to right, rgb(184, 226, 250), #e6d094);
-}
-
-.logo:hover {
-  cursor: pointer;
 }
 
 .header_list_item {

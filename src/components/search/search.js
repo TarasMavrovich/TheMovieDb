@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import style from "./style.module.css";
 import { useDispatch } from "react-redux";
 import { getSearchMovie } from "../../reducers/movieSlice";

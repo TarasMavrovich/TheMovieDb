@@ -1,5 +1,3 @@
-import React from "react";
-
 const PageNavigation = ({ currentPage, totalPages, onPageClick }) => {
   const generatePages = () => {
     const pages = [];

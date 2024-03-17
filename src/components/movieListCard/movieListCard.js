@@ -1,4 +1,3 @@
-import React from "react";
 import { IMG_URL } from "../../constans/apiUrls";
 import style from "./style.module.css";
 import { useDispatch, useSelector } from "react-redux";

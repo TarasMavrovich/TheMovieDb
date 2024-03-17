@@ -1,4 +1,3 @@
-import React from "react";
 import Search from "../search/search";
 import style from "./style.module.css";
 import { Link } from "react-router-dom";
@@ -15,42 +14,45 @@ const Header = ({ showUrl, showPage }) => {
   return (
     <div className={style.header}>
       <div className={style.nav_wrapper}>
-        <div
-          className={style.header_name}
-          onClick={() => handleHideMovies(type.popular)}
-        >
-          <Link to={navigation_page.start_page}>KinoOnline</Link>
-          <p className={style.logo}></p>
+        <div className={style.header_name}>
+          <Link
+            to={navigation_page.start_page}
+            onClick={() => handleHideMovies(type.popular)}
+          >
+            KinoOnline
+          </Link>
         </div>
-        <ul className={style.header_list}>
-          <li className={style.header_list_item}>
-            <Link
-              to={navigation_page.start_page}
-              onClick={() => handleHideMovies(type.popular)}
-            >
-              Popular
-            </Link>
-          </li>
-          <li className={style.header_list_item}>
-            <Link
-              to={navigation_page.start_page}
-              onClick={() => handleHideMovies(type.top)}
-            >
-              Top
-            </Link>
-          </li>
-          <li className={style.header_list_item}>
-            <Link
-              to={navigation_page.start_page}
-              onClick={() => handleHideMovies(type.upcoming)}
-            >
-              Upcoming
-            </Link>
-          </li>
-          <li className={style.header_list_item}>
-            <Link to={navigation_page.favorite_movie}>Favorite</Link>
-          </li>
-        </ul>
+        <nav>
+          <ul className={style.header_list}>
+            <li className={style.header_list_item}>
+              <Link
+                to={navigation_page.start_page}
+                onClick={() => handleHideMovies(type.popular)}
+              >
+                Popular
+              </Link>
+            </li>
+            <li className={style.header_list_item}>
+              <Link
+                to={navigation_page.start_page}
+                onClick={() => handleHideMovies(type.top)}
+              >
+                Top
+              </Link>
+            </li>
+            <li className={style.header_list_item}>
+              <Link
+                to={navigation_page.start_page}
+                onClick={() => handleHideMovies(type.upcoming)}
+              >
+                Upcoming
+              </Link>
+            </li>
+            <li className={style.header_list_item}>
+              <Link to={navigation_page.favorite_movie}>Favorite</Link>
+            </li>
+          </ul>
+        </nav>
       </div>
 
       <div className={style.flex}>

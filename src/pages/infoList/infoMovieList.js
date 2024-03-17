@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { BACK_IMG_URL, IMG_BIG__URL } from "../../constans/apiUrls";
 import { navigation_page } from "../../navigator/navigation";

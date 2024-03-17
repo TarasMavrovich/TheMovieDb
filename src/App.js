@@ -1,12 +1,13 @@
 import { Route, Routes } from "react-router";
 import "./App.css";
-import InfoList from "./pages/infoList/infoMovieList.js";
-import Layout from "./pages/layout/layout.js";
-import MovieList from "./components/movieList/movieList.js";
+import InfoList from "./pages/infoList/infoMovieList";
+// import InfoList from "./pages/infoList/infoMovieList";
+import Layout from "./pages/layout/layout";
+import MovieList from "./components/movieList/movieList";
 import { useState } from "react";
-import { type } from "./constans/type.js";
-import { navigation_page } from "./navigator/navigation.js";
-import FavoriteMovies from "./pages/favoriteMovies/favoriteMovies.js";
+import { type } from "./constans/type";
+import { navigation_page } from "./navigator/navigation";
+import FavoriteMovies from "./pages/favoriteMovies/favoriteMovies";
 
 function App() {
   const [url, setUrl] = useState(type.popular.base);

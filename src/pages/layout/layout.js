@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getMovies, searchMovie } from "../../api/api";
 import { getMovie } from "../../reducers/movieSlice";
