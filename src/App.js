@@ -1,7 +1,6 @@
 import { Route, Routes } from "react-router";
 import "./App.css";
 import InfoList from "./pages/infoList/infoMovieList";
-// import InfoList from "./pages/infoList/infoMovieList";
 import Layout from "./pages/layout/layout";
 import MovieList from "./components/movieList/movieList";
 import { useState } from "react";
@@ -10,7 +9,7 @@ import { navigation_page } from "./navigator/navigation";
 import FavoriteMovies from "./pages/favoriteMovies/favoriteMovies";
 
 function App() {
-  const [url, setUrl] = useState(type.popular.base);
+  const [url, setUrl] = useState(type[1].type);
   const [page, setPage] = useState(1);
 
   return (

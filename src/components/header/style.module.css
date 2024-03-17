@@ -22,14 +22,14 @@
   margin-left: 20px;
 }
 
-.header_name {
+.header_list_item:first-child {
   display: flex;
   align-items: center;
   gap: 10px;
   font-size: 1.5em;
 }
 
-.header_name::after {
+.header_list_item:first-child:after {
   content: "";
   width: 50px;
   height: 20px;
