@@ -27,18 +27,10 @@ const FavoriteMovies = () => {
     }
   }, [favoriteMovies]);
 
-  if (!favoriteMovies && favoriteMovies.length < 1) {
-    return null;
-  }
-
-  return (
-    <div className={style.container}>
-      <div className={style.list_favorite_movie}>
-        {infoList.length > 0 ? (
-          infoList.map((movie) => (
-            <MovieListCard key={movie.id} movie={movie} />
-          ))
-        ) : (
+  if (!favoriteMovies?.length) {
+    return (
+      <div className={style.container}>
+        <div className={style.list_favorite_movie}>
           <Link
             to={NAVIGATION.StartPage}
             className={style.button_favorite_movies}
@@ -47,7 +39,18 @@ const FavoriteMovies = () => {
               +<p>Added favorite films</p>
             </div>
           </Link>
-        )}
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className={style.container}>
+      <div className={style.list_favorite_movie}>
+        {infoList?.length > 0 &&
+          infoList.map((movie) => (
+            <MovieListCard key={movie.id} movie={movie} />
+          ))}
       </div>
     </div>
   );
