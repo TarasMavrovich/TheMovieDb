@@ -33,13 +33,13 @@ const MovieList = ({ showPage, currentPage }) => {
 
   return (
     <div>
-      {loading && movies && movies.results ? (
+      {loading ? (
         <Loader />
       ) : (
         <div className={style.container}>
           <div className={style.list_movie}>
             {movies &&
-              movies.results.map((movie) => (
+              movies?.results.map((movie) => (
                 <MovieListCard key={movie.id} movie={movie} />
               ))}
           </div>

@@ -84,9 +84,10 @@ const InfoList = () => {
                 <span className={style.vote}>
                   {infoList.vote_average.toFixed(1)}
                 </span>
-                <span>
-                  User <p>Score</p>
-                </span>
+                <p>
+                  User <br />
+                  Score
+                </p>
                 <div className={style.favorite} onClick={handleFavoriteClick}>
                   <img
                     alt="heart"

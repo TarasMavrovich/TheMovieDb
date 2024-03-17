@@ -7,7 +7,6 @@ import HeaderListItem from "../headerList/headerListItem";
 
 const Header = ({ showUrl, showPage }) => {
   const handleHideMovies = (type) => {
-    console.log(type);
     showUrl(type);
     showPage(1);
     window.scrollTo({ top: 0, behavior: "smooth" });

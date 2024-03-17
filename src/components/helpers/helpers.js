@@ -1,4 +1,4 @@
-export const createPage = (count) => {
+export const createPages = (count) => {
   return Array.from({ length: count }, (_, index) => index + 1);
 };
 
