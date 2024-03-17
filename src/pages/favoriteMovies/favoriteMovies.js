@@ -1,31 +1,21 @@
 import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
-import { getMovieById } from "../../api/api";
+import { useDispatch, useSelector } from "react-redux";
 import MovieListCard from "../../components/movieListCard/movieListCard";
 import style from "./style.module.css";
 import { Link } from "react-router-dom";
 import { NAVIGATION } from "../../navigator/navigation";
+import { fetchFavoriteMovies } from "../../reducers/action";
 
 const FavoriteMovies = () => {
+  const dispatch = useDispatch();
   const [infoList, setInfoList] = useState([]);
   const favoriteMovies = useSelector((state) => state.favorite);
 
   useEffect(() => {
     if (favoriteMovies) {
-      const fetchMovieList = async () => {
-        try {
-          const movieDetailsPromises = favoriteMovies.map(async (id) => {
-            return await getMovieById(id);
-          });
-          const movieDetails = await Promise.all(movieDetailsPromises);
-          setInfoList(movieDetails);
-        } catch (error) {
-          console.error("Error fetching movie data: ", error);
-        }
-      };
-      fetchMovieList();
+      dispatch(fetchFavoriteMovies(favoriteMovies, setInfoList));
     }
-  }, [favoriteMovies]);
+  }, [dispatch, favoriteMovies]);
 
   if (!favoriteMovies?.length) {
     return (

@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import MovieListCard from "../movieListCard/movieListCard";
 import style from "./style.module.css";
@@ -7,24 +6,7 @@ import Loader from "../loader/loader";
 
 const MovieList = ({ showPage, currentPage }) => {
   const movies = useSelector((state) => state.movies);
-  const [loading, setLoading] = useState(false);
-
-  useEffect(() => {
-    if (movies) {
-      setLoading(true);
-
-      const fetchData = async () => {
-        try {
-          await new Promise((resolve) => setTimeout(resolve, 500));
-          setLoading(false);
-        } catch (error) {
-          console.error("Error fetching movie data: ", error);
-          setLoading(false);
-        }
-      };
-      fetchData();
-    }
-  }, [movies]);
+  const loading = useSelector((state) => state.loading);
 
   const handlePageChange = (newPage) => {
     showPage(newPage);

@@ -1,3 +1,5 @@
+import clsx from "clsx";
+import style from "./style.module.css";
 const PageNavigation = ({ currentPage, totalPages, onPageClick }) => {
   const generatePages = () => {
     const pages = [];
@@ -38,11 +40,11 @@ const PageNavigation = ({ currentPage, totalPages, onPageClick }) => {
       {generatePages().map((page, index) => (
         <span
           key={index}
-          style={{
-            cursor: page === "..." ? "default" : "pointer",
-            fontWeight: currentPage === page ? "bold" : "normal",
-            color: currentPage === page ? "violet" : "white",
-          }}
+          className={clsx(style.pageNumber, {
+            [style.bold]: currentPage === page && page !== "...",
+            [style.violet]: currentPage === page,
+            [style.white]: currentPage !== page,
+          })}
           onClick={() => onPageClick(page)}
         >
           {page}

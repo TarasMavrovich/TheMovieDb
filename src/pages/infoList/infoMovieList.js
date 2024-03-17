@@ -2,40 +2,34 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { BACK_IMG_URL, IMG_BIG__URL } from "../../constans/apiUrls";
 import { NAVIGATION } from "../../navigator/navigation";
-import { getMovieById } from "../../api/api";
 import Loader from "../../components/loader/loader";
 import style from "./style.module.css";
 import { Link } from "react-router-dom";
 import { getDate } from "../../components/helpers/helpers";
 import heart from "../../assets/heart.svg";
 import { getFavorite } from "../../reducers/movieSlice";
+import { fetchMovieId } from "../../reducers/action";
 
 const InfoList = () => {
   const dispatch = useDispatch();
   const movies = useSelector((state) => state.moviesId);
   const isFavorite = useSelector((state) => state.favorite.includes(movies));
   const [infoList, setInfoList] = useState();
-  const [loading, setLoading] = useState(true);
+  const loading = useSelector((state) => state.loading);
 
   useEffect(() => {
     if (movies) {
-      const fetchMovieList = async () => {
-        try {
-          const data = await getMovieById(`${movies}`);
-          setInfoList(data);
-          await new Promise((resolve) => setTimeout(resolve, 500));
-          setLoading(false);
-        } catch (error) {
-          console.error("Error fetching weather data: ", error);
-        }
-      };
-      fetchMovieList();
+      dispatch(fetchMovieId(movies, setInfoList));
     }
-  }, [movies]);
+  }, [dispatch, movies]);
 
   const handleFavoriteClick = () => {
     dispatch(getFavorite(movies));
   };
+
+  if (!infoList) {
+    return null;
+  }
 
   return (
     <div>

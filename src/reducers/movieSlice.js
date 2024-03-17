@@ -7,6 +7,7 @@ export const movieSlice = createSlice({
     movies: null,
     moviesId: null,
     searchMovie: null,
+    loading: false,
   },
   reducers: {
     getMovie: (state, action) => {
@@ -27,10 +28,13 @@ export const movieSlice = createSlice({
     getSearchMovie: (state, action) => {
       state.searchMovie = action.payload;
     },
+    getLoading: (state, action) => {
+      state.loading = action.payload;
+    },
   },
 });
 
-export const { getMovie, getMovieId, getFavorite, getSearchMovie } =
+export const { getMovie, getMovieId, getFavorite, getSearchMovie, getLoading } =
   movieSlice.actions;
 
 export default movieSlice.reducer;
