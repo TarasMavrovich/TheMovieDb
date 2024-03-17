@@ -2,7 +2,7 @@ import { IMG_URL } from "../../constans/apiUrls";
 import style from "./style.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { getFavorite, getMovieId } from "../../reducers/movieSlice";
-import { navigation_page } from "../../navigator/navigation";
+import { NAVIGATION } from "../../navigator/navigation";
 import { Link } from "react-router-dom";
 import heart from "../../assets/heart.svg";
 
@@ -33,7 +33,7 @@ const MovieListCard = ({ movie }) => {
               onClick={handleFavoriteClick}
             />
 
-            <Link to={`${navigation_page.info_list}`}>
+            <Link to={`${NAVIGATION.InfoList}`}>
               <img
                 onClick={handleCardClick}
                 className={style.img}
@@ -44,7 +44,7 @@ const MovieListCard = ({ movie }) => {
           </div>
           <div className={style.content}>
             <p className={style.vote}>{vote_average.toFixed(1)}</p>
-            <Link className={style.title} to={`${navigation_page.info_list}`}>
+            <Link className={style.title} to={`${NAVIGATION.InfoList}`}>
               {title}
             </Link>
             <p className={style.date}>{release_date}</p>

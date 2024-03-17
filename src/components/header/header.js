@@ -2,7 +2,7 @@ import Search from "../search/search";
 import style from "./style.module.css";
 import { Link } from "react-router-dom";
 import { type } from "../../constans/type";
-import { navigation_page } from "../../navigator/navigation";
+import { NAVIGATION } from "../../navigator/navigation";
 import HeaderListItem from "../headerList/headerListItem";
 
 const Header = ({ showUrl, showPage }) => {
@@ -27,7 +27,7 @@ const Header = ({ showUrl, showPage }) => {
             ))}
 
             <li className={style.header_list_item}>
-              <Link to={navigation_page.favorite_movie}>Favorite</Link>
+              <Link to={NAVIGATION.FavoriteMovie}>Favorite</Link>
             </li>
           </ul>
         </nav>

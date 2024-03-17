@@ -1,9 +1,9 @@
-import { BASEURL } from "../constans/apiUrls";
+import { BASE_URL } from "../constans/apiUrls";
 import { API_KEY } from "../constans/apiKey";
 
 async function getMovies(type, page) {
   const response = await fetch(
-    `${BASEURL}/movie/${type}?api_key=${API_KEY}&page=${page}`
+    `${BASE_URL}/movie/${type}?api_key=${API_KEY}&page=${page}`
   );
   const data = await response.json();
 
@@ -12,7 +12,7 @@ async function getMovies(type, page) {
 
 async function searchMovie(query) {
   const response = await fetch(
-    `${BASEURL}/search/movie?api_key=${API_KEY}&query=${query}`
+    `${BASE_URL}/search/movie?api_key=${API_KEY}&query=${query}`
   );
   const data = await response.json();
 
@@ -21,7 +21,7 @@ async function searchMovie(query) {
 
 async function getMovieById(movieId) {
   const response = await fetch(
-    `${BASEURL}/movie/${movieId}?api_key=${API_KEY}`
+    `${BASE_URL}/movie/${movieId}?api_key=${API_KEY}`
   );
   const data = await response.json();
 

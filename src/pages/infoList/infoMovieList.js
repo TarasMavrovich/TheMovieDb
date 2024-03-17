@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { BACK_IMG_URL, IMG_BIG__URL } from "../../constans/apiUrls";
-import { navigation_page } from "../../navigator/navigation";
+import { NAVIGATION } from "../../navigator/navigation";
 import { getMovieById } from "../../api/api";
 import Loader from "../../components/loader/loader";
 import style from "./style.module.css";
@@ -62,9 +62,7 @@ const InfoList = () => {
 
             <div className={style.info}>
               <h2 className={style.title}>
-                <Link to={`${navigation_page.info_list}`}>
-                  {infoList.title}
-                </Link>
+                <Link to={`${NAVIGATION.InfoList}`}>{infoList.title}</Link>
               </h2>
 
               <div className={style.facts}>

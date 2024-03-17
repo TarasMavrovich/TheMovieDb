@@ -5,7 +5,7 @@ import Layout from "./pages/layout/layout";
 import MovieList from "./components/movieList/movieList";
 import { useState } from "react";
 import { type } from "./constans/type";
-import { navigation_page } from "./navigator/navigation";
+import { NAVIGATION } from "./navigator/navigation";
 import FavoriteMovies from "./pages/favoriteMovies/favoriteMovies";
 
 function App() {
@@ -16,20 +16,17 @@ function App() {
     <div className="App">
       <Routes>
         <Route
-          path={navigation_page.start_page}
+          path={NAVIGATION.StartPage}
           element={
             <Layout url={url} setUrl={setUrl} page={page} setPage={setPage} />
           }
         >
           <Route
-            path={navigation_page.start_page}
+            path={NAVIGATION.StartPage}
             element={<MovieList showPage={setPage} currentPage={page} />}
           />
-          <Route path={navigation_page.info_list} element={<InfoList />} />
-          <Route
-            path={navigation_page.favorite_movie}
-            element={<FavoriteMovies />}
-          />
+          <Route path={NAVIGATION.InfoList} element={<InfoList />} />
+          <Route path={NAVIGATION.FavoriteMovie} element={<FavoriteMovies />} />
         </Route>
       </Routes>
     </div>

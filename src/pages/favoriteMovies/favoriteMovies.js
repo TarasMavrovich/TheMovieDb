@@ -4,7 +4,7 @@ import { getMovieById } from "../../api/api";
 import MovieListCard from "../../components/movieListCard/movieListCard";
 import style from "./style.module.css";
 import { Link } from "react-router-dom";
-import { navigation_page } from "../../navigator/navigation";
+import { NAVIGATION } from "../../navigator/navigation";
 
 const FavoriteMovies = () => {
   const [infoList, setInfoList] = useState([]);
@@ -40,7 +40,7 @@ const FavoriteMovies = () => {
           ))
         ) : (
           <Link
-            to={navigation_page.start_page}
+            to={NAVIGATION.StartPage}
             className={style.button_favorite_movies}
           >
             <div className={style.content}>
