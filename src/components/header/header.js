@@ -22,6 +22,7 @@ const Header = ({ showUrl, showPage }) => {
             KinoOnline
           </Link>
         </div>
+
         <nav>
           <ul className={style.header_list}>
             <li className={style.header_list_item}>
@@ -57,8 +58,8 @@ const Header = ({ showUrl, showPage }) => {
 
       <div className={style.flex}>
         <Search />
-        <button className={style.button}>Sign In</button>
-        <button className={style.button}>Switch</button>
+        {/* <button className={style.button}>Sign In</button> */}
+        {/* <button className={style.button}>Switch</button> */}
       </div>
     </div>
   );
